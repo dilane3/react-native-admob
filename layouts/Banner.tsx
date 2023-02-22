@@ -5,6 +5,7 @@ import {
   BannerAdSize,
   TestIds,
 } from "react-native-google-mobile-ads";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const adUnitId = __DEV__
   ? TestIds.BANNER
@@ -19,9 +20,13 @@ const Banner = () => {
   };
 
   return (
-    <View style={styles.container}>
-      <Text>Hello Banner</Text>
+    <SafeAreaView style={{ flex: 1 }}>
+      <View style={styles.container}>
+        <Text>Hello Banner</Text>
 
+        <Button title="Go to Home" onPress={handleNavigateToHome} />
+      </View>
+      
       <BannerAd
         unitId={adUnitId}
         size={BannerAdSize.FULL_BANNER}
@@ -29,9 +34,7 @@ const Banner = () => {
           requestNonPersonalizedAdsOnly: true,
         }}
       />
-
-      <Button title="Go to Home" onPress={handleNavigateToHome} />
-    </View>
+    </SafeAreaView>
   );
 };
 

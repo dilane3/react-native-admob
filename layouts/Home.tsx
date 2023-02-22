@@ -11,11 +11,18 @@ const Home = () => {
     );
   }
 
+  const handleNavigateToInterstitial = () => {
+    navigation.dispatch(
+      CommonActions.navigate("Inter")
+    );
+  }
+
   return (
     <View style={styles.container}>
       <Text>Hello Home</Text>
 
       <Button title="Go to Banner" onPress={handleNavigateToBanner} />
+      <Button title="Go to Interstitial" onPress={handleNavigateToInterstitial} />
     </View>
   );
 };
