@@ -17,12 +17,19 @@ const Home = () => {
     );
   }
 
+  const handleNavigateToReward = () => {
+    navigation.dispatch(
+      CommonActions.navigate("Reward")
+    );
+  }
+
   return (
     <View style={styles.container}>
       <Text>Hello Home</Text>
 
       <Button title="Go to Banner" onPress={handleNavigateToBanner} />
       <Button title="Go to Interstitial" onPress={handleNavigateToInterstitial} />
+      <Button title="Go to Reward" onPress={handleNavigateToReward} />
     </View>
   );
 };
